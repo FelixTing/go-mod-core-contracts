@@ -68,6 +68,25 @@ const (
 	ApiSubscriptionByLabelRoute    = ApiSubscriptionRoute + "/" + Label + "/{" + Label + "}"
 	ApiSubscriptionByReceiverRoute = ApiSubscriptionRoute + "/" + Receiver + "/{" + Receiver + "}"
 
+	ApiNotificationCleanupRoute = ApiBase + "/cleanup"
+	ApiNotificationCleanupByAgeRoute = ApiBase + "/" + Cleanup + "/" + Age + "/{" + Age + "}"
+	ApiNotificationRoute = ApiBase + "/notification"
+	ApiNotificationByTimeRangeRoute = ApiNotificationRoute + "/" + Start + "/{" + Start + "}/" + End + "/{" + End + "}"
+	ApiNotificationByAgeRoute = ApiNotificationRoute + "/" + Age + "/{" + Age + "}"
+	ApiNotificationByCategoryRoute = ApiNotificationRoute + "/" + Category + "/{" + Category + "}"
+	ApiNotificationByLabelRoute = ApiNotificationRoute + "/" + Label + "/{" + Label + "}"
+	ApiNotificationByIdRoute = ApiNotificationRoute + "/" + Id + "/{" + Id + "}"
+	ApiNotificationByStatusRoute = ApiNotificationRoute + "/" + Status + "/{" + Status + "}"
+	ApiNotificationBySubscriptionNameRoute = ApiNotificationRoute + "/" + Subscription + "/" + Name + "/{" + Name + "}"
+
+	ApiTransmissionRoute = ApiBase + "/transmission"
+	ApiTransmissionByIdRoute = ApiTransmissionRoute + "/" + Id + "/{" + Id + "}"
+	ApiTransmissionByAgeRoute = ApiTransmissionRoute + "/" + "/" + Age + "/{" + Age + "}"
+	ApiAllTransmissionRoute = ApiTransmissionRoute + "/" + All
+	ApiTransmissionBySubscriptionNameRoute = ApiTransmissionRoute + "/" + Subscription + "/" + Name + "/{" + Name + "}"
+	ApiTransmissionByTimeRangeRoute = ApiTransmissionRoute + "/" + Start + "/{" + Start + "}/" + End + "/{" + End + "}"
+	ApiTransmissionByStatusRoute = ApiTransmissionRoute + "/" + Status + "/{" + Status + "}"
+
 	ApiConfigRoute  = ApiBase + "/config"
 	ApiMetricsRoute = ApiBase + "/metrics"
 	ApiPingRoute    = ApiBase + "/ping"
@@ -118,6 +137,10 @@ const (
 	Category     = "category"
 	Receiver     = "receiver"
 	Subscription = "subscription"
+	Status       = "status"
+	Cleanup      = "cleanup"
+	Sender       = "sender"
+	Severity     = "severity"
 
 	Offset      = "offset"         //query string to specify the number of items to skip before starting to collect the result set.
 	Limit       = "limit"          //query string to specify the numbers of items to return

@@ -5,6 +5,8 @@
 
 package models
 
+import "encoding/json"
+
 // Subscription and its properties are defined in the APIv2 specification:
 // https://app.swaggerhub.com/apis-docs/EdgeXFoundry1/support-notifications/2.x#/Subscription
 // Model fields are same as the DTOs documented by this swagger. Exceptions, if any, are noted below.
@@ -29,4 +31,12 @@ type Channel struct {
 	Type           ChannelType
 	EmailAddresses []string
 	Url            string
+}
+
+func (c Channel) String() string {
+	out, err := json.Marshal(c)
+	if err != nil {
+		return err.Error()
+	}
+	return string(out)
 }
